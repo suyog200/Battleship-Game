@@ -1,2 +1,6 @@
 Testing git on Eclipse 
 Update 20:29 its working
+testing git on eclipse
+update: pull successful
+take 2 : trying push
+update: if you see this on git then it was sucessful.
