@@ -27,7 +27,7 @@ public class Ship {
         display.shout("You've sunk a ship!");
         this.isSunk = true; 
         Display.wait(1500);
-    }
+    } 
 
     public boolean isSunk() {
         return this.isSunk;
