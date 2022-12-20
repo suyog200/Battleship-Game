@@ -32,5 +32,5 @@ public class Ship {
     public boolean isSunk() {
         return this.isSunk;
     }
-
+  
 }
