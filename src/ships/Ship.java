@@ -1,5 +1,7 @@
 package ships;
 
+import java.util.List;
+
 import board.Square;
 
 public class Ship {
