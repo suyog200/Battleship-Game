@@ -21,8 +21,14 @@ public class Game {
 		opponent = new Player(input.getString("Player 2, what is your name? "),board2,2,"🟦");
 		choosePlacement(); // to choose how to place ships
 		setBoardVisibility(board1,board2); // visibility of board
-		// more to add here.
+		Display.printTwoBoards(board1,board2,istest); // calling method from Display class to print two boards
+		
+		while(player.isAlive() && opponent.isAlive()) {
+			shootingPhase(player,opponent,board1,board2);
+		}
+		victory(player,opponent);
 	}
+	
 	private void choosePlacement()
 	{
 		String placementType = input.getString("Please choose: m for manual or r for random ship placement:").toLowerCase();
@@ -36,5 +42,32 @@ public class Game {
 		default -> randomGameplay();
 		}
 	}
+	
+	private void setBoardVisibility(Board board1, Board board2)// makes board for both player visible
+	{
+		board1.setBoardVisibility(true);
+		board2.setBoardVisibility(true);
+	}
+	
+	private void swapPlayer(IPlayer player, IPlayer opponent)
+	{
+		if(this.player == player)
+		{
+			this.player = opponent;
+			this.opponent = player;
+		}
+		else
+		{
+			this.player = player;
+			this.opponent = opponent;
+		}
+	}
+	
 
+	
+	
+	
+	
+	
+	
 }
