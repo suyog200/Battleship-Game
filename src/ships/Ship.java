@@ -1,5 +1,7 @@
 package ships;
 
+import java.util.ArrayList;
+
 import board.Square;
 
 
