@@ -1,7 +1,8 @@
 package player;
 import board.Board;
+
 import ships.Ship;
-import java.util.Arraylist;
+import java.util.ArrayList;
 public class Player extends IPlayer{
 	
 	public Player(String name, Board board, int rank, String symbol) {
@@ -29,8 +30,13 @@ public class Player extends IPlayer{
 		}
 		return false;
 	}
-	@override
-	public void handleshot(int[]shot, Iplayer opponent) {
-		
-	}
+	  @Override
+	    public void handleShot(int[] shot, IPlayer opponent) {
+	        this.struck.add(shot);
+	        opponent.getBoard().getOcean()[shot[0]][shot[1]].setVisibility(false);
+	        opponent.getBoard().getOcean()[shot[0]][shot[1]].setHit();
+	        for (Ship ship: opponent.ships) {
+	            ship.canShipSink();
+	        }
+	    }
 }
