@@ -21,7 +21,7 @@ public class Game {
 		opponent = new Player(input.getString("Player 2, what is your name? "),board2,2,"🟦");
 		choosePlacement(); // to choose how to place ships
 		setBoardVisibility(board1,board2); // visibility of board
-		// more to add here
+		// more to add here.
 	}
 	private void choosePlacement()
 	{
