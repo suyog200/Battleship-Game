@@ -35,14 +35,14 @@ public class Square {
 	public void setShip(Boolean isShip) {
 		this.isShip = isShip;
 	}
-
+	  public void setHit() {
+	        this.isHit = true;
+	    }
 	public Boolean isHit() {
 		return isHit;
 	}
 
-	public void setHit(Boolean isHit) {
-		this.isHit = isHit;
-	}
+	 
 
 	public Boolean isHidden() {
 		return isHidden;

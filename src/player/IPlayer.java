@@ -1,8 +1,9 @@
 package player;
-import java.util.ArrayList;
-
 import board.Board;
 import ships.Ship;
+import java.util.ArrayList;
+
+
 
 public abstract class IPlayer {
 	protected Board board;
