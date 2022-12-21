@@ -1,7 +1,8 @@
 package board;
 
 public class Board {
- final int BOARD_SIZE = 10;
+	//Board Size 10x10
+	private final Integer BOARD_SIZE = 10;
 
 	private final Square[][] ocean = new Square[BOARD_SIZE][BOARD_SIZE];
 
@@ -9,6 +10,7 @@ public class Board {
 		return ocean;
 	}
 
+	//Initializing 10x10 square object board
 	public Board() {
 		for (int i = 0; i < BOARD_SIZE; i++) {
 			for (int j = 0; j < BOARD_SIZE; j++) {

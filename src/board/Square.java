@@ -1,10 +1,25 @@
 package board;
 
 public class Square {
-	private boolean isShip, isHit, isHidden, isSunk;
-	private final int x, y;
+	private enum SquareStatus {
+		EMPTY("~ "), SHIP("<> "), HIT("#"), MISS("X"), SUNK("💀");
 
-	public Square(int x, int y) {
+		String squareCharatcter;
+
+		SquareStatus(String squareCharatcter) {
+			this.squareCharatcter = squareCharatcter;
+		}
+
+		public String getCharacter() {
+			return squareCharatcter;
+		}
+	}
+
+	private Boolean isShip, isHit, isHidden, isSunk;
+	private final Integer x, y;
+
+	// Constructor for each 10x10 object
+	public Square(Integer x, Integer y) {
 		this.x = x;
 		this.y = y;
 		this.isShip = false;
@@ -13,47 +28,47 @@ public class Square {
 		this.isSunk = false;
 	}
 
-	public boolean isShip() {
+	public Boolean isShip() {
 		return isShip;
 	}
 
-	public void setShip(boolean isShip) {
+	public void setShip(Boolean isShip) {
 		this.isShip = isShip;
 	}
 
-	public boolean isHit() {
+	public Boolean isHit() {
 		return isHit;
 	}
 
-	public void setHit(boolean isHit) {
+	public void setHit(Boolean isHit) {
 		this.isHit = isHit;
 	}
 
-	public boolean isHidden() {
+	public Boolean isHidden() {
 		return isHidden;
 	}
 
-	public void setHidden(boolean isHidden) {
+	public void setHidden(Boolean isHidden) {
 		this.isHidden = isHidden;
 	}
 
-	public void setVisibility(boolean state) {
+	public void setVisibility(Boolean state) {
 		this.isHidden = state;
 	}
 
-	public boolean isSunk() {
+	public Boolean isSunk() {
 		return isSunk;
 	}
 
-	public void setSunk(boolean isSunk) {
+	public void setSunk(Boolean isSunk) {
 		this.isSunk = isSunk;
 	}
 
-	public int getX() {
+	public Integer getX() {
 		return x;
 	}
 
-	public int getY() {
+	public Integer getY() {
 		return y;
 	}
 }
