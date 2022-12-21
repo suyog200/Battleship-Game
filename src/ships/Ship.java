@@ -32,5 +32,14 @@ public class Ship {
     public boolean isSunk() {
         return this.isSunk;
     }
+    
+    //method to check if the ship can sink when hit
+    public void canShipSink() {
+        boolean shouldBeSunk = true;
+        for (Square nextSquare : squares) {
+            if (!nextSquare.isHit()) shouldBeSunk = false;
+        }
+        if (shouldBeSunk && !this.isSunk) setSunk();
+    }
   
 }
