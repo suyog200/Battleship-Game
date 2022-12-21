@@ -29,4 +29,8 @@ public class Player extends IPlayer{
 		}
 		return false;
 	}
+	@override
+	public void handleshot(int[]shot, Iplayer opponent) {
+		
+	}
 }
