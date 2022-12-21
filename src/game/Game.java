@@ -65,6 +65,13 @@ public class Game {
 			this.opponent = opponent;
 		}
 	}
+	private void playVsAi(int mode) {
+		// to be added
+	}
+	private void waitingForAI() {
+		display.shout("Calculating...");
+		Display.wait(1000);
+	}
 	private void victory(IPlayer player, IPlayer opponent) // displays which player has won
 	{
 		String victoryShout;
@@ -90,6 +97,63 @@ public class Game {
 			}
 		}
 	}
+	private void randomVsAiGameplay() {
+		// to be added 
+	}
+	private void manualGameplay() {  // both player and opponent have to place their ships manually
+		var listOfShips = new ShipType[] { // list of ships
+				ShipType.Carrier,
+				ShipType.Cruiser,
+				ShipType.Battleship,
+				ShipType.Destroyer,
+		};
+		for(int j=0;j<2;j++) {
+			for(var ship: listOfShips) {
+				Display.clear();
+				if(j==0) {
+					Display.printSingleBoard(board1); //prints board by calling that method define in class Display
+					bf.manualPlacement((Player) player,ship);
+					Display.printSingleBoard(board1);
+				}else {
+					Display.printSingleBoard(board2);
+					bf.manualPlacement((Player) opponent, ship);
+					Display.printSingleBoard(board2);
+				}
+				if(ship.getLength() == 2) {
+					Display.clear();
+				}
+			}
+		}
+	}
+	private void AivsAiPlacement() {
+		// to be added
+	}
+	private void testGameplay(Board board1, Board board2) {
+		Display.printSingleBoard(board1);
+		bf.randomPlacement(player, ShipType.values()[4]);
+		bf.randomPlacement(opponent, ShipType.values()[4]);
+		bf.randomPlacement(player, ShipType.values()[4]);
+		bf.randomPlacement(opponent, ShipType.values()[4]);
+		Display.printSingleBoard(board1);
+		Display.printSingleBoard(board2);
+	}
+	
+	private void shootingPhase() {
+		// to be added 
+	}
+	
+	private void mainMenu() { //main menu which will be displayed at start
+		int mode = input.getInt("Welcome! What game mode do you prefer? \n1: Pilot vs Pilot\n2: Top Gun\n3: Terminator II");
+		while(mode < 1 || mode > 3) {
+			mode = input.getInt("Pick between 1 and 3\n");
+		}
+		switch(mode) {
+		case 1-> mainGame();
+		case 2-> playVsAi(2);
+		case 3-> aiVsAi();
+		}
+	}
+	
 
 	
 	
