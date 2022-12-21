@@ -1,6 +1,7 @@
 package ships;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import board.Square;
 
