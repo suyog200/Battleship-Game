@@ -12,15 +12,15 @@ public abstract class IPlayer {
 	
 	public Integer rank;
 	public String symbol;
-	public ArrayList<int[]> struck =new ArrayList<>();   
+	public ArrayList<Integer[]> struck =new ArrayList<>();   
 	
-	public void handleShot(int[] shot,IPlayer opponent) {
+	public void handleShot(Integer[] shot,IPlayer opponent) {
 		
 	}
 	public boolean isAlive() {
 		return true;
 	}
-	public boolean validshot(int[] shot, IPlayer opponent) 
+	public boolean validshot(Integer[] shot, IPlayer opponent) 
 	   {
 		try {
 			opponent.getBoard().getOcean()[shot[0]][shot[1]].setHit();
