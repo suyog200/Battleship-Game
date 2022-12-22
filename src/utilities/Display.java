@@ -85,7 +85,7 @@ public class Display {
     public void displayMainMenu() {
         clear();
         String mainMenu = "Welcome to BATTLESHIP!";
-        System.out.println(ASCII.tomCruise());
+        System.out.println(ASCII.gameTitle());
         promptEnterKey();
         clear();
         System.out.println(mainMenu);
