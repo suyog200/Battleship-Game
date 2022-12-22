@@ -20,15 +20,15 @@ public class Display {
         String repeat = (border + " ").repeat(board.BOARD_SIZE + 3);
         sb.append(repeat);
         sb.append("\n");
-        for (Integer k = 0; k < board.BOARD_SIZE; k++) {
+        for (int k = 0; k < board.BOARD_SIZE; k++) {
             if (k == 0)
                 sb.append(border).append("   ");
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             sb.append(" ").append(Color.YELLOW).append(alphabet.charAt(k)).append(" ").append(Color.RESET);
         }
         sb.append(" ").append(border).append("\n");
-        for (Integer i = 0; i < board.BOARD_SIZE; i++) {
-            for (Integer j = 0; j < board.BOARD_SIZE; j++) {
+        for (int i = 0; i < board.BOARD_SIZE; i++) {
+           for (int j = 0; j < board.BOARD_SIZE; j++) {
 
                 if (i == board.BOARD_SIZE - 1 && j == 0)
                     sb.append(Color.YELLOW).append(border).append(String.format("%3d", i+1)).append(" ").append(Color.RESET);
@@ -51,7 +51,7 @@ public class Display {
         String repeat1 = (border1 + " ").repeat(board1.BOARD_SIZE + 3);
         String repeat2 = (border2 + " ").repeat(board2.BOARD_SIZE + 3);
         sd.append(repeat1).append(" ❕  ").append(repeat2).append("\n");
-        for (Integer k=0;k<board1.BOARD_SIZE * 2 + 2;k++) {
+        for (int k=0;k<board1.BOARD_SIZE * 2 + 2;k++) {
             if (k == 0) sd.append(border1).append(" ").append("  ");
             String alphabet = "ABCDEFGHIJ";
             if (k<10) sd.append(" ").append(Color.YELLOW).append(alphabet.charAt(k)).append(" ").append(Color.RESET);
@@ -60,8 +60,8 @@ public class Display {
             if (k>11) sd.append(" ").append(Color.YELLOW).append(alphabet.charAt(k-12)).append(" ").append(Color.RESET);
             if (k == board1.BOARD_SIZE * 2 + 1) sd.append(border2).append("\n");
         }  //PRINTING ACTUAL BOARDS
-        for (Integer i = 0; i < board1.BOARD_SIZE; i++) {
-            for (Integer j = 0; j < board1.BOARD_SIZE*2+2; j++) {
+        for (int i = 0; i < board1.BOARD_SIZE; i++) {
+            for (int j = 0; j < board1.BOARD_SIZE*2+2; j++) {
                 if (i == board1.BOARD_SIZE - 1 && j == 0)
                     sd.append(Color.YELLOW).append(border1).append(" ").append(i+1).append(" ").append(Color.RESET);
                 else if (j == 0)
