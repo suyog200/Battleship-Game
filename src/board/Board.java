@@ -27,9 +27,9 @@ public class Board {
 		}
 	}
 
-	public boolean isPlacementOk(int[] placement) {
-		int positionX = placement[0];
-		int positionY = placement[1];
+	public boolean isPlacementOk(Integer[] placement) {
+		Integer positionX = placement[0];
+		Integer positionY = placement[1];
 		return 0 <= positionX && positionX < BOARD_SIZE && 0 <= positionY && positionY < BOARD_SIZE && // Is it on
 																										// board?
 				!ocean[positionX][positionY].isShip(); // DO NOT put it on other ships
