@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import board.Square;
+import utilities.Display;
 
 
 public class Ship {
