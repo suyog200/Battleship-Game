@@ -1,12 +1,11 @@
 package utilities;
+
 import board.Board;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Stream;
+
 public class Display {
 	public static void clear() {
-        System.out.print("\033\143");
         System.out.flush();
     }
 
