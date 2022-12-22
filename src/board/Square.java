@@ -2,7 +2,7 @@ package board;
 
 public class Square {
 	private enum SquareStatus {
-		EMPTY("~ "), SHIP("<> "), HIT("#"), MISS("X"), SUNK("💀");
+		EMPTY("~ "), SHIP("< "), HIT("# "), MISS("X "), SUNK("💀");
 
 		String squareCharatcter;
 
