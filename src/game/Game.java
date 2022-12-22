@@ -65,13 +65,7 @@ public class Game {
 			this.opponent = opponent;
 		}
 	}
-	private void playVsAi(int mode) {
-		// to be added
-	}
-	private void waitingForAI() {
-		display.shout("Calculating...");
-		Display.wait(1000);
-	}
+
 	private void victory(IPlayer player, IPlayer opponent) // displays which player has won
 	{
 		String victoryShout;
@@ -97,9 +91,7 @@ public class Game {
 			}
 		}
 	}
-	private void randomVsAiGameplay() {
-		// to be added 
-	}
+	
 	private void manualGameplay() {  // both player and opponent have to place their ships manually
 		var listOfShips = new ShipType[] { // list of ships
 				ShipType.Carrier,
@@ -125,9 +117,6 @@ public class Game {
 			}
 		}
 	}
-	private void AivsAiPlacement() {
-		// to be added
-	}
 	private void testGameplay(Board board1, Board board2) {
 		Display.printSingleBoard(board1);
 		bf.randomPlacement(player, ShipType.values()[4]);
@@ -138,19 +127,25 @@ public class Game {
 		Display.printSingleBoard(board2);
 	}
 	
-	private void shootingPhase() {
-		// to be added 
+	private void shootingPhase(IPlayer player, IPlayer opponent,Board board1,Board board2) {
+		Integer[] shot = input.convertPlacement(input.getString(String.format("Time for shooting, %s!", player.name)));
+		while(!player.validshot(shot, opponent) || player.struck.contains(shot))
+		{
+		shot = input.convertPlacement(input.getString(String.format("%s,That's just not good...", player.name)));	
+		}
+		player.handleShot(shot, opponent);
+		Display.printTwoBoards(board1, board2, isTest);
+		swapPlayer(this.player,this.opponent);
+		
 	}
 	
-	private void mainMenu() { //main menu which will be displayed at start
-		int mode = input.getInt("Welcome! What game mode do you prefer? \n1: Pilot vs Pilot\n2: Top Gun\n3: Terminator II");
-		while(mode < 1 || mode > 3) {
-			mode = input.getInt("Pick between 1 and 3\n");
+	public void mainMenu() { //main menu which will be displayed at start
+		int mode = input.getInt("Welcome!Player VS Player Battleship Gameplay\n");
+		while(mode == 1) {
+			mode = input.getInt("Press 1 to play\n");
 		}
 		switch(mode) {
 		case 1-> mainGame();
-		case 2-> playVsAi(2);
-		case 3-> aiVsAi();
 		}
 	}
 	
