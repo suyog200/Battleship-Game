@@ -27,12 +27,12 @@ public class Board {
 		}
 	}
 
-	public boolean isPlacementOk(Integer[] placement) {
+	public Boolean isPlacementOk(Integer[] placement) {
 		Integer positionX = placement[0];
 		Integer positionY = placement[1];
-		return 0 <= positionX && positionX < BOARD_SIZE && 0 <= positionY && positionY < BOARD_SIZE && // Is it on
-																										// board?
-				!ocean[positionX][positionY].isShip(); // DO NOT put it on other ships
+		return 0 <= positionX && positionX < BOARD_SIZE
+			   && 0 <= positionY && positionY < BOARD_SIZE && // Is it on board within 10x10
+			   !ocean[positionX][positionY].isShip(); // DO NOT put it on other ships
 	}
 
 }
