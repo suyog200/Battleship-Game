@@ -81,7 +81,7 @@ public class Game {
 	private void randomGameplay() {
 		Display.printSingleBoard(board1);
 		for(int j=0;j<2;j++) {
-			for(int i=5;i>1;i++) {
+			for(int i=5;i>1;i--) {
 				if(j == 0) {
 					bf.randomPlacement((Player) player, ShipType.values()[i-1]);
 					Display.printSingleBoard(board1);
