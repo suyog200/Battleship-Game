@@ -28,7 +28,7 @@ public class Display {
         }
         sb.append(" ").append(border).append("\n");
         for (Integer i = 0; i < board.BOARD_SIZE; i++) {
-            for (int j = 0; j < board.BOARD_SIZE; j++) {
+            for (Integer j = 0; j < board.BOARD_SIZE; j++) {
 
                 if (i == board.BOARD_SIZE - 1 && j == 0)
                     sb.append(Color.YELLOW).append(border).append(String.format("%3d", i+1)).append(" ").append(Color.RESET);
