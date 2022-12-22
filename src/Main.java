@@ -9,7 +9,7 @@ public class Main {
 		
 		display.displayMainMenu();
 		Game game = new Game();
-		game.mainGame();
+		game.mainMenu();
 
 	}
 
