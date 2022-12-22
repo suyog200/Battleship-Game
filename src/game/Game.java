@@ -140,8 +140,8 @@ public class Game {
 	}
 	
 	public void mainMenu() { //main menu which will be displayed at start
-		int mode = input.getInt("Welcome!Player VS Player Battleship Gameplay\n");
-		while(mode == 1) {
+		int mode = input.getInt("Welcome! 1. Player VS Player Battleship Gameplay\n");
+		while(mode < 1) {
 			mode = input.getInt("Press 1 to play\n");
 		}
 		switch(mode) {
