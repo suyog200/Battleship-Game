@@ -92,7 +92,7 @@ public class Display {
         promptEnterKey();
     }
 
-    public static void wait(Integer ms) {
+    public static void wait(int ms) {
         try {
             Thread.sleep(ms);
         }
