@@ -2,7 +2,7 @@ package board;
 
 public class Board {
 	//Board Size 10x10
-	private final Integer BOARD_SIZE = 10;
+	public final Integer BOARD_SIZE = 10;
 
 	private final Square[][] ocean = new Square[BOARD_SIZE][BOARD_SIZE];
 

@@ -34,16 +34,16 @@ public class Input {
     }
     
   //to convert placements
-    public int[] convertPlacement(String coordinate) {
+    public Integer[] convertPlacement(String coordinate) {
         try {
             while (!coordinateCheck(coordinate)) {
                 coordinate = getString("Invalid input, try again! ").toLowerCase();
             }
             char[] letters = "abcdefghij".toCharArray();
             String letter = coordinate.substring(0, 1).toLowerCase();
-            int row = new String(letters).indexOf(letter);
-            int col = Integer.parseInt(coordinate.substring(1)) - 1;
-            return new int[]{col, row};
+            Integer row = new String(letters).indexOf(letter);
+            Integer col = Integer.parseInt(coordinate.substring(1)) - 1;
+            return new Integer[]{col, row};
         } catch (NumberFormatException e) {
             return null;
         }

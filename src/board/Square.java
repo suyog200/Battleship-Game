@@ -32,7 +32,7 @@ public class Square {
 		return isShip;
 	}
 
-	public void setShip(Boolean isShip) {
+	public void setShip() {
 		this.isShip = true;
 	}
 
