@@ -33,16 +33,16 @@ public class Square {
 	}
 
 	public void setShip(Boolean isShip) {
-		this.isShip = isShip;
+		this.isShip = true;
 	}
-	  public void setHit() {
-	        this.isHit = true;
-	    }
+
 	public Boolean isHit() {
 		return isHit;
 	}
 
-	 
+	public void setHit() {
+		this.isHit = true;
+	}
 
 	public Boolean isHidden() {
 		return isHidden;
@@ -60,8 +60,8 @@ public class Square {
 		return isSunk;
 	}
 
-	public void setSunk(Boolean isSunk) {
-		this.isSunk = isSunk;
+	public void setSunk() {
+		this.isSunk = true;
 	}
 
 	public Integer getX() {
@@ -71,4 +71,13 @@ public class Square {
 	public Integer getY() {
 		return y;
 	}
+	
+    public String toString() {
+        if (isHidden()) return SquareStatus.EMPTY.getCharacter();
+        if (isShip() && isHit() && isSunk()) return SquareStatus.SUNK.getCharacter();
+        else if (isShip() && isHit()) return SquareStatus.HIT.getCharacter();
+        else if (isShip()) return SquareStatus.SHIP.getCharacter();
+        else if (isHit()) return SquareStatus.MISS.getCharacter();
+        else return SquareStatus.EMPTY.getCharacter();
+    }
 }
