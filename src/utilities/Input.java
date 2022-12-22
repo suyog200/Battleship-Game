@@ -32,5 +32,31 @@ public class Input {
         }
         return -1;
     }
+    
+  //to convert placements
+    public int[] convertPlacement(String coordinate) {
+        try {
+            while (!coordinateCheck(coordinate)) {
+                coordinate = getString("Invalid input, try again! ").toLowerCase();
+            }
+            char[] letters = "abcdefghij".toCharArray();
+            String letter = coordinate.substring(0, 1).toLowerCase();
+            int row = new String(letters).indexOf(letter);
+            int col = Integer.parseInt(coordinate.substring(1)) - 1;
+            return new int[]{col, row};
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    //to check the coordinates
+    public boolean coordinateCheck(String coordinate) {
+        if (coordinate.length() == 2) {
+            return coordinate.matches("\\D\\d");
+        } else if (coordinate.length() == 3) {
+            return coordinate.matches("\\D\\d\\d");
+        }
+        return false;
+    }
 
 }
