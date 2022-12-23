@@ -17,10 +17,10 @@ public abstract class IPlayer {
 	public void handleShot(Integer[] shot,IPlayer opponent) {
 		
 	}
-	public boolean isAlive() {
+	public Boolean isAlive() {
 		return true;
 	}
-	public boolean validshot(Integer[] shot, IPlayer opponent) 
+	public Boolean validshot(Integer[] shot, IPlayer opponent) 
 	   {
 		try {
 			opponent.getBoard().getOcean()[shot[0]][shot[1]].setHit();

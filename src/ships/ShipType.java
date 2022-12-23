@@ -10,13 +10,13 @@ public enum ShipType {
   ;
 
 	//to set ship length
-  int length;
+  Integer length;
 
-  ShipType(int length) {
+  ShipType(Integer length) {
       this.length = length;
   }
 
-  public int getLength() {
+  public Integer getLength() {
       return length;
   }
 
