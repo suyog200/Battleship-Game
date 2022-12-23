@@ -16,7 +16,7 @@ public class Game {
 	BoardFactory bf = new BoardFactory();
 	IPlayer player; //class Iplayer reference
 	IPlayer opponent; //class Iplayer reference
-	boolean isTest = false;
+	Boolean isTest = false;
 	
 	public void mainGame()
 	{
@@ -84,7 +84,7 @@ public class Game {
 			for(int i=5;i>1;i--) {
 				if(j == 0) {
 					bf.randomPlacement((Player) player, ShipType.values()[i-1]);
-					Display.printSingleBoard(board1);
+					//Display.printSingleBoard(board1);
 				}else {
 					bf.randomPlacement(opponent, ShipType.values()[i-1]);
 				}
@@ -140,7 +140,7 @@ public class Game {
 	}
 	
 	public void mainMenu() { //main menu which will be displayed at start
-		int mode = input.getInt("Press 1. Player VS Player Battleship Gameplay\n");
+		Integer mode = input.getInt("Press 1. Player VS Player Battleship Gameplay\n");
 		while(mode < 1) {
 			mode = input.getInt("Press 1 to play\n");
 		}

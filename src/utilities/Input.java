@@ -22,7 +22,7 @@ public class Input {
 	}
 	
 	 //get integer
-    public int getInt(String message) {
+    public Integer getInt(String message) {
         display.shout(message);
         try {
             return input.nextInt();
@@ -50,7 +50,7 @@ public class Input {
     }
 
     //to check the coordinates
-    public boolean coordinateCheck(String coordinate) {
+    public Boolean coordinateCheck(String coordinate) {
         if (coordinate.length() == 2) {
             return coordinate.matches("\\D\\d");
         } else if (coordinate.length() == 3) {
