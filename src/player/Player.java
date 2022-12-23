@@ -5,7 +5,7 @@ import ships.Ship;
 import java.util.ArrayList;
 public class Player extends IPlayer{
 	
-	public Player(String name, Board board, int rank, String symbol) {
+	public Player(String name, Board board, Integer rank, String symbol) {
 		this.name = name;
 		this.board =board;
 		this.rank= rank;

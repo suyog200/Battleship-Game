@@ -10,7 +10,7 @@ import utilities.Display;
 public class Ship {
 
     private List<Square> squares;
-    private boolean isSunk;
+    private Boolean isSunk;
     private ShipType shipType;
     Display display = new Display();
 
@@ -31,13 +31,13 @@ public class Ship {
         Display.wait(1500);
     } 
 
-    public boolean isSunk() {
+    public Boolean isSunk() {
         return this.isSunk;
     }
     
   //method to check if the ship can sink when hit
     public void canShipSink() {
-        boolean shouldBeSunk = true;
+        Boolean shouldBeSunk = true;
         for (Square nextSquare : squares) {
             if (!nextSquare.isHit()) shouldBeSunk = false;
         }
