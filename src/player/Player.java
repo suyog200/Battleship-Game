@@ -24,7 +24,7 @@ public class Player extends IPlayer{
 	{
 		
 	}
-	public Boolean IsAlive()
+	public Boolean isAlive()
 	{
 		for (Ship ship: this.ships) {
 			if(!ship.isSunk()) return true;
