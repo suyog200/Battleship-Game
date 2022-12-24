@@ -73,7 +73,7 @@ public class Game {
 			victoryShout = player.name+" has won!";
 		}
 		else {
-			victoryShout = opponent.name+ "has won!";
+			victoryShout = opponent.name+ " has won!";
 		}
 		display.shout(victoryShout); // calls method shout from Display class
 	}
